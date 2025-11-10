@@ -13,8 +13,12 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Load data and store in session state
+@st.cache_data
+def load_data():
+    return pd.read_csv('data/final/car_prices.csv')
 if "df" not in st.session_state:
-    st.session_state['df'] = pd.read_csv('data/final/car_prices.csv')
+    st.session_state['df'] = load_data()
 
 df = st.session_state['df']
 
@@ -83,10 +87,10 @@ def apply_filters(original_df: pd.DataFrame) -> pd.DataFrame:
     Apply filters to the original dataframe
 
     Args:
-        origianl_df (pd.DataFrame): _description_
+        original_df (pd.DataFrame): The input DataFrame before filtering
 
     Returns:
-        pd.DataFrame: _description_
+        pd.DataFrame: The filtered DataFrame
     """
     filtered_df = original_df[original_df['price'].between(*price_range)]
     if fuel_types:

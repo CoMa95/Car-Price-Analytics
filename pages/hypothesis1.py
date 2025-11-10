@@ -23,26 +23,26 @@ st.caption("This dashboard provides insights into Western car prices through"
 
 
 def calculate_correlation(df) -> tuple:
-    """
-    Calculates Pearson and Spearman correlation between avg_mpg and price.
+    '''Calculates Pearson and Spearman correlation between fueltype and price.
+
     Args:
         df (pd.DataFrame)
-    Returns:
-        tuple: pearson_corr, pearson_pval, spearman_corr, spearman_pval
-    """
-    pearson_corr, pearson_pval = pearsonr(df["avg_mpg"], df["price"])
-    spearman_corr, spearman_pval = spearmanr(df["avg_mpg"], df["price"])
+
+    Returns: tuple: pearson_corr, pearson_pval, spearman_corr, spearman_pval
+    '''
+    pearson_corr, pearson_pval = pearsonr(df["fueltype"], df["price"])
+    spearman_corr, spearman_pval = spearmanr(df["fueltype"], df["price"])
     return pearson_corr, pearson_pval, spearman_corr, spearman_pval
 
 
 def run_statistical_tests(df) -> tuple:
-    """
-    Performs t-test and Mann–Whitney U test on price grouped by fuel
-    efficiency.
+    """Performs t-test and Mann–Whitney U test on price grouped by fuel
+    type.
+
     Args:
         df (pd.DataFrame)
-    Returns:
-        tuple: t_stat, t_pval, u_stat, u_pval
+
+    Returns: tuple: t_stat, t_pval, u_stat, u_pval
     """
     petrol = df[df['fueltype'] == 'petrol']['price']
     diesel = df[df['fueltype'] == 'diesel']['price']
@@ -56,10 +56,11 @@ def run_statistical_tests(df) -> tuple:
 def show_price_metrics(df):
     """
     Displays average price overall, for diesel, and for petrol cars.
+
     Args:
         df (pd.DataFrame)
-    Returns:
-        None
+        
+    Returns: None
     """
     overall_avg = df["price"].mean()
     diesel_avg = df[df["fueltype"] == "diesel"]["price"].mean()
@@ -86,9 +87,11 @@ def show_price_metrics(df):
     )
 
 
-def show_hypothesis_statement():
+def show_hypothesis_statement() -> None:
     """Displays the hypothesis statement for Hypothesis 1.
-    Returns: None"""
+
+    Returns: None
+    """
     st.markdown("### Hypothesis 1: Fuel Type Impacts Car Price")
     st.latex(r"""
     \begin{align*}
@@ -98,8 +101,13 @@ def show_hypothesis_statement():
     """)
 
 
-def plot_boxplot(df):
-    """Displays boxplot of price by fuel type."""
+def plot_boxplot(df) -> None:
+    """Displays boxplot of price by fuel type.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None"""
     st.markdown("### Price Distribution by Fuel Type")
     fig, ax = plt.subplots(figsize=(6, 4))
     sns.boxplot(x='fueltype', y='price', data=df, palette='Set2', ax=ax)
@@ -107,14 +115,22 @@ def plot_boxplot(df):
 
 
 def show_correlation_results(df) -> None:
-    """Displays correlation and statistical test results in metric cards."""
+    """Displays correlation and statistical test results in metric cards.
+    
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None
+    """
     pearson_corr, pearson_pval, spearman_corr, spearman_pval\
         = calculate_correlation(df)
     t_stat, t_pval, u_stat, u_pval = run_statistical_tests(df)
 
     st.markdown("### Statistical Test Results")
 
+    # Display correlation and statistical test results
     col1, col2, col3, col4 = st.columns(4)
+    # Display Pearson correlation results
     col1.metric(
         label="Pearson Correlation",
         value=f"{pearson_corr:.3f}",
@@ -125,6 +141,7 @@ def show_correlation_results(df) -> None:
         value=f"{pearson_pval:.4f}",
         delta="Significant" if pearson_pval < 0.05 else "Not Significant"
     )
+    # Display Spearman correlation results
     col3.metric(
         label="Spearman Correlation",
         value=f"{spearman_corr:.3f}",
@@ -135,22 +152,27 @@ def show_correlation_results(df) -> None:
         value=f"{spearman_pval:.4f}",
         delta="Significant" if spearman_pval < 0.05 else "Not Significant"
     )
+    # Display t-test and Mann–Whitney U test results
     col5, col6, col7, col8 = st.columns(4)
+    # Display t-test statistic
     col5.metric(
         label="t-test statistic",
         value=f"{t_stat:.3f}",
         delta="Positive effect" if t_stat > 0 else "Negative effect"
     )
+    # Display t-test p-value
     col6.metric(
         label="t-test p-value",
         value=f"{t_pval:.4f}",
         delta="Significant" if t_pval < 0.05 else "Not Significant"
     )
+    # Display Mann–Whitney U test statistic
     col7.metric(
         label="Mann–Whitney U statistic",
         value=f"{u_stat:.3f}",
         delta="Positive effect" if u_stat > 0 else "Negative effect"
     )
+    # Display Mann–Whitney U test p-value
     col8.metric(
         label="Mann–Whitney p-value",
         value=f"{u_pval:.4f}",
@@ -159,7 +181,13 @@ def show_correlation_results(df) -> None:
 
 
 def show_interpretation(df) -> None:
-    """Displays interpretation of the statistical results for Hypothesis 1."""
+    """Displays interpretation of the statistical results for Hypothesis 1.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None
+    """
     pearson_corr, pearson_pval, spearman_corr, spearman_pval \
         = calculate_correlation(df)
     t_stat, t_pval, u_stat, u_pval = run_statistical_tests(df)
@@ -200,16 +228,23 @@ def show_interpretation(df) -> None:
                                               "p-value": "{:.4f}"}))
 
 
-def run_page(df):
-    """Runs the Hypothesis 1 page with all components."""
-    show_hypothesis_statement()
-    show_price_metrics(df)
-    col1, col2 = st.columns(2)
+def run_page(df) -> None:
+    """Runs the Hypothesis 1 page with all components.
+    
+    Args:
+        df (pd.DataFrame): The dataframe containing car data.
+
+    Returns: None
+    """
+    show_hypothesis_statement()  # Display hypothesis statement
+    show_price_metrics(df)  # Show average price metrics
+    col1, col2 = st.columns(2)  # Create two columns for layout
     with col1:
-        plot_boxplot(df)
+        plot_boxplot(df)  # Show boxplot of price by fuel type
     with col2:
-        show_correlation_results(df)
-        show_interpretation(df)
+        show_correlation_results(df)  # Show correlation and test results
+        show_interpretation(df)  # Show interpretation
 
 
+# Execute the page with filtered data
 run_page(st.session_state['filtered_df'])

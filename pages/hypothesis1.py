@@ -11,6 +11,7 @@ and Mann–Whitney U test) to analyze the impact of fuel type on car prices.
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
 from scipy.stats import ttest_ind, mannwhitneyu, pearsonr, spearmanr
 
 
@@ -53,7 +54,13 @@ def run_statistical_tests(df) -> tuple:
 
 
 def show_price_metrics(df):
-    """Displays average price overall, for diesel, and for petrol cars."""
+    """
+    Displays average price overall, for diesel, and for petrol cars.
+    Args:
+        df (pd.DataFrame)
+    Returns:
+        None
+    """
     overall_avg = df["price"].mean()
     diesel_avg = df[df["fueltype"] == "diesel"]["price"].mean()
     petrol_avg = df[df["fueltype"] == "petrol"]["price"].mean()
@@ -80,7 +87,8 @@ def show_price_metrics(df):
 
 
 def show_hypothesis_statement():
-    """Displays the hypothesis statement for Hypothesis 1."""
+    """Displays the hypothesis statement for Hypothesis 1.
+    Returns: None"""
     st.markdown("### Hypothesis 1: Fuel Type Impacts Car Price")
     st.latex(r"""
     \begin{align*}
@@ -172,19 +180,16 @@ def show_interpretation(df) -> None:
             cars differently due to performance, efficiency, or market demand.
         """)
     else:
-        st.info(
-        """
+        st.info("""
         **Summary:**
         - The p-values for both the t-test and Mann–Whitney U test are above
             0.05, meaning there is **no statistically significant difference**
                 in prices between petrol and diesel cars.
         - Therefore, we **cannot reject the null hypothesis (H₀)** — fuel type
-            does not appear to significantly influence price in this dataset.
-        """
-        )
+            does not appear to significantly influence price in this
+            dataset.""")
 
     with st.expander("View Test Summary Table"):
-        import pandas as pd
         results_df = pd.DataFrame({
             "Test": ["Pearson correlation", "Spearman correlation",
                      "t-test", "Mann–Whitney U"],

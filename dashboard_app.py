@@ -8,7 +8,7 @@ import pandas as pd
 # Configure the Streamlit page
 st.set_page_config(
     page_title="Car Price Analytics Dashboard",
-    page_icon=":car:",
+    page_icon="🚗",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -23,12 +23,15 @@ df = st.session_state['df']
 # Define pages for navigation
 overview = st.Page("pages/overview.py",
                    title="Overview",
-                   icon="")
+                   icon="🏠")
 hypothesis1 = st.Page("pages/hypothesis1.py",
                       title="Hypothesis 1",
-                      icon="")
+                      icon="❓")
+hypothesis2 = st.Page("pages/hypothesis2.py",
+                      title="Hypothesis 2",
+                      icon="❓")
 
-nav = st.navigation([overview, hypothesis1])
+nav = st.navigation([overview, hypothesis1, hypothesis2])
 
 # ---------------- Sidebar (filters) ----------------
 with st.sidebar:

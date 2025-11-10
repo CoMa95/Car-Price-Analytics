@@ -208,4 +208,5 @@ def run_page(df) -> None:
         show_interpretation(df)
 
 
+# Run the Hypothesis 2 page with the filtered dataframe
 run_page(st.session_state['filtered_df'])

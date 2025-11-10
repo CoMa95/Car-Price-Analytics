@@ -184,7 +184,7 @@ def show_interpretation(df) -> None:
         **Summary:**
         - The p-values for both the t-test and Mann–Whitney U test are above
             0.05, meaning there is **no statistically significant difference**
-                in prices between petrol and diesel cars.
+            in prices between petrol and diesel cars.
         - Therefore, we **cannot reject the null hypothesis (H₀)** — fuel type
             does not appear to significantly influence price in this
             dataset.""")

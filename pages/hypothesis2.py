@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import ttest_ind, mannwhitneyu
 
-st.session_state["current_page"] = "Hypothesis 2"
+# Configure the Streamlit page
 st.title("Car Price Analytics Dashboard")
 st.caption("This dashboard provides insights into Western car prices through filtering, summarizing, visualization, and price prediction. Built with Streamlit + pandas + matplotlib.")
 

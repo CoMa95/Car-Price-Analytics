@@ -13,8 +13,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-current_page = st.session_state.get("current_page", "Overview")
-
 if "df" not in st.session_state:
     st.session_state['df'] = pd.read_csv('data/final/car_prices.csv')
 
@@ -32,6 +30,7 @@ hypothesis2 = st.Page("pages/hypothesis2.py",
                       icon="❓")
 
 nav = st.navigation([overview, hypothesis1, hypothesis2])
+current_page = nav.title
 
 # ---------------- Sidebar (filters) ----------------
 with st.sidebar:
@@ -65,6 +64,7 @@ with st.sidebar:
         )
     else:
         fuel_types = df["fueltype"].unique().tolist()  # include all by default
+
     # car body type
     carbody_types = st.multiselect("Car Body Type",
                                    options=df['carbody'].unique().tolist(),

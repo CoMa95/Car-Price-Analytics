@@ -5,9 +5,10 @@ import seaborn as sns
 from scipy.stats import ttest_ind, mannwhitneyu
 
 # Configure the Streamlit page
-st.session_state["current_page"] = "Hypothesis 1"
 st.title("Car Price Analytics Dashboard")
-st.caption("This dashboard provides insights into Western car prices through filtering, summarizing, visualization, and price prediction. Built with Streamlit + pandas + matplotlib.")
+st.caption("This dashboard provides insights into Western car prices through"
+           " filtering, summarizing, visualization, and price prediction."
+           " Built with Streamlit + pandas + matplotlib.")
 
 # --- Define or import your section functions ---
 def show_hypothesis_statement():

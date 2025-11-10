@@ -59,7 +59,7 @@ def show_price_metrics(df):
 
     Args:
         df (pd.DataFrame)
-        
+
     Returns: None
     """
     overall_avg = df["price"].mean()
@@ -116,7 +116,7 @@ def plot_boxplot(df) -> None:
 
 def show_correlation_results(df) -> None:
     """Displays correlation and statistical test results in metric cards.
-    
+
     Args:
         df (pd.DataFrame)
 
@@ -230,7 +230,7 @@ def show_interpretation(df) -> None:
 
 def run_page(df) -> None:
     """Runs the Hypothesis 1 page with all components.
-    
+
     Args:
         df (pd.DataFrame): The dataframe containing car data.
 

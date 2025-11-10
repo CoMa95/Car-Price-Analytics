@@ -190,7 +190,6 @@ def show_interpretation(df) -> None:
                                               "p-value": "{:.4f}"}))
 
 
-
 def run_page(df) -> None:
     """Runs the hypothesis 2 analysis page.
 
@@ -201,9 +200,12 @@ def run_page(df) -> None:
     """
     show_hypothesis_statement()
     show_efficiency_price_metrics(df)
-    show_scatterplot(df)
-    show_correlation_results(df)
-    show_interpretation(df)
+    col1, col2 = st.columns(2)
+    with col1:
+        show_scatterplot(df)
+    with col2:
+        show_correlation_results(df)
+        show_interpretation(df)
 
 
 run_page(st.session_state['filtered_df'])

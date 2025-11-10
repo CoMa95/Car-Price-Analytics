@@ -104,7 +104,8 @@ def apply_filters(original_df: pd.DataFrame) -> pd.DataFrame:
 st.session_state['filtered_df'] = apply_filters(df)
 
 # display total cars after filtering
-st.sidebar.info(f"**Cars after filtering: {st.session_state['filtered_df'].shape[0]}**")
+st.sidebar.info("**Cars after filtering: "
+                f"{st.session_state['filtered_df'].shape[0]}**")
 
 # ---------------- Save global filters to session_state ----------------
 st.session_state['global_filters'] = {

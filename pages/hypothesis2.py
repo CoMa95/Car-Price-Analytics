@@ -20,10 +20,11 @@ st.caption("This dashboard provides insights into Western car prices through "
 def calculate_correlation(df) -> tuple:
     """
     Calculates Pearson and Spearman correlation between avg_mpg and price.
+
     Args:
         df (pd.DataFrame)
-    Returns:
-        tuple: pearson_corr, pearson_pval, spearman_corr, spearman_pval
+
+    Returns: tuple: pearson_corr, pearson_pval, spearman_corr, spearman_pval
     """
     pearson_corr, pearson_pval = pearsonr(df["avg_mpg"], df["price"])
     spearman_corr, spearman_pval = spearmanr(df["avg_mpg"], df["price"])
@@ -34,10 +35,11 @@ def run_statistical_tests(df) -> tuple:
     """
     Performs t-test and Mann–Whitney U test on price grouped by fuel
     efficiency.
+
     Args:
         df (pd.DataFrame)
-    Returns:
-        tuple: t_stat, t_pval, u_stat, u_pval
+
+    Returns: tuple: t_stat, t_pval, u_stat, u_pval
     """
     median_eff = df["avg_mpg"].median()
     low_eff = df[df["avg_mpg"] <= median_eff]["price"]
@@ -49,8 +51,14 @@ def run_statistical_tests(df) -> tuple:
     return t_stat, t_pval, u_stat, u_pval
 
 
-def show_efficiency_price_metrics(df):
-    """Displays average price for high vs low fuel efficiency groups."""
+def show_efficiency_price_metrics(df) -> None:
+    """Displays average price for high vs low fuel efficiency groups.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None
+    """
     median_eff = df["avg_mpg"].median()
     low_eff = df[df["avg_mpg"] <= median_eff]
     high_eff = df[df["avg_mpg"] > median_eff]
@@ -76,7 +84,10 @@ def show_efficiency_price_metrics(df):
 
 
 def show_hypothesis_statement() -> None:
-    """Displays the hypothesis statement."""
+    """Displays the hypothesis statement.
+
+    Returns: None
+    """
     st.markdown("### Hypothesis 2: Fuel Efficiency Correlates with Car Price")
     st.latex(r"""
     \begin{align*}
@@ -87,7 +98,13 @@ def show_hypothesis_statement() -> None:
 
 
 def show_scatterplot(df) -> None:
-    """Displays scatterplot of price vs avg_mpg with regression line."""
+    """Displays scatterplot of price vs avg_mpg with regression line.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None
+    """
     fig, ax = plt.subplots(figsize=(7, 4))
     sns.scatterplot(data=df, x="avg_mpg", y="price", ax=ax)
     sns.regplot(data=df, x="avg_mpg", y="price",
@@ -106,7 +123,9 @@ def show_correlation_results(df) -> None:
 
     st.markdown("### Statistical Test Results")
 
+    # Display correlation and statistical test results
     col1, col2, col3, col4 = st.columns(4)
+    # Display Pearson correlation results
     col1.metric(
         label="Pearson Correlation",
         value=f"{pearson_corr:.3f}",
@@ -117,6 +136,7 @@ def show_correlation_results(df) -> None:
         value=f"{pearson_pval:.4f}",
         delta="Significant" if pearson_pval < 0.05 else "Not Significant"
     )
+    # Display Spearman correlation results
     col3.metric(
         label="Spearman Correlation",
         value=f"{spearman_corr:.3f}",
@@ -127,22 +147,27 @@ def show_correlation_results(df) -> None:
         value=f"{spearman_pval:.4f}",
         delta="Significant" if spearman_pval < 0.05 else "Not Significant"
     )
+    # Display t-test and Mann–Whitney U test results
     col5, col6, col7, col8 = st.columns(4)
+    # Display t-test statistic
     col5.metric(
         label="t-test statistic",
         value=f"{t_stat:.3f}",
         delta="Positive effect" if t_stat > 0 else "Negative effect"
     )
+    # Display t-test p-value
     col6.metric(
         label="t-test p-value",
         value=f"{t_pval:.4f}",
         delta="Significant" if t_pval < 0.05 else "Not Significant"
     )
+    # Display Mann–Whitney U test statistic
     col7.metric(
         label="Mann–Whitney U statistic",
         value=f"{u_stat:.3f}",
         delta="Positive effect" if u_stat > 0 else "Negative effect"
     )
+    # Display Mann–Whitney U test p-value
     col8.metric(
         label="Mann–Whitney p-value",
         value=f"{u_pval:.4f}",
@@ -198,14 +223,14 @@ def run_page(df) -> None:
     Returns:
         None
     """
-    show_hypothesis_statement()
-    show_efficiency_price_metrics(df)
-    col1, col2 = st.columns(2)
+    show_hypothesis_statement()  # Display hypothesis statement
+    show_efficiency_price_metrics(df)  # Show average price metrics
+    col1, col2 = st.columns(2)  # Create two columns for layout
     with col1:
-        show_scatterplot(df)
+        show_scatterplot(df)  # Show scatterplot of price vs avg_mpg
     with col2:
-        show_correlation_results(df)
-        show_interpretation(df)
+        show_correlation_results(df)  # Show correlation and test results
+        show_interpretation(df)  # Show interpretation
 
 
 # Run the Hypothesis 2 page with the filtered dataframe

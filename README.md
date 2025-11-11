@@ -162,17 +162,21 @@ The following hypotheses were tested using statistical and visual analysis:
 - Descriptive statistics are presented to support and contextualize the findings.
 - Findings indicate whether FWD cars tend to have lower average prices than RWD cars.
 
-#### 6. Hypothesis 5: What are features which highly predict price?
+#### 6. Hypothesis 5: Feature Correlation with Price (User Summary)
 
-- “Description pending final update by team member (Cosmin).”
+- This page investigates whether any car features show a statistically significant relationship with price.
+It explains the hypothesis, the statistical approach, and presents the findings clearly.
+- Continuous variables are analysed with the Spearman rank correlation test, highlighting which numeric features move in tandem with price.
+- Categorical variables are assessed using Mann-Whitney U and Kruskal-Wallis H tests to identify group-level price differences.
+- Results tables summarise test statistics and p-values, while heatmaps and violin plots visualise how features relate to car price.
+- The analysis concludes with a refined list of ten key predictors, selected after accounting for multicollinearity and class imbalance, to inform future modelling.
 
-#### 7. Price Predictor Page
+#### 7. Predictive Model Showcase (User Summary)
 
-- “Description pending final update by team member (Cosmin).”
-
-#### 8. Insights Page
-
-- Key takeaways and conclusions from all analyses.
+- This page presents a demonstration model that estimates car prices based on key design and performance features.
+- It begins with a short explanation of the model — a multiple linear regression trained on selected predictors — and displays its performance metrics and a visual comparison of predicted versus actual prices.
+- Users can experiment with the model by entering their own feature values using interactive sliders and dropdown menus (for example, adjusting horsepower or choosing a car body type).
+- After setting inputs, clicking “Predict Price” instantly generates an estimated car price, allowing users to explore how different specifications might influence market value.
 
 ### Communication
 

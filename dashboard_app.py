@@ -32,8 +32,11 @@ hypothesis1 = st.Page("pages/hypothesis1.py",
 hypothesis2 = st.Page("pages/hypothesis2.py",
                       title="Hypothesis 2",
                       icon="❓")
+hypothesis5 = st.Page("pages/hypothesis5.py",
+                      title="Hypothesis 5",
+                      icon="❓")
 
-nav = st.navigation([overview, hypothesis1, hypothesis2])
+nav = st.navigation([overview, hypothesis1, hypothesis2, hypothesis5])
 current_page = nav.title
 
 # ---------------- Sidebar (filters) ----------------

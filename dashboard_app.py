@@ -41,7 +41,10 @@ hypothesis4 = st.Page("pages/hypothesis4.py",
 hypothesis5 = st.Page("pages/hypothesis5.py",
                       title="Hypothesis 5",
                       icon="❓")
-nav = st.navigation([overview, hypothesis1, hypothesis2, hypothesis3, hypothesis4, hypothesis5])
+insights_model = st.Page("pages/insights_model.py",
+                      title="Model Insights",
+                      icon="🤖")
+nav = st.navigation([overview, hypothesis1, hypothesis2, hypothesis3, hypothesis4, hypothesis5, insights_model])
 
 current_page = nav.title
 

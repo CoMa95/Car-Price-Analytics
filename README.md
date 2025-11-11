@@ -49,7 +49,7 @@ The following hypotheses were tested using statistical and visual analysis:
 5. Top predictors of price can be identified through regression modelling.\
 *Validation:* M linear regression model trained on key numerical predictors to assess variable importance.
 
-## Project Plan
+## 🧩 Project Plan
 ### High-level Steps
 
 1. Data Collection – Load dataset from Kaggle (car_prices.csv).
@@ -69,8 +69,15 @@ The following hypotheses were tested using statistical and visual analysis:
 - **scikit-learn** for regression modelling and predictor ranking.
 - **Streamlit** for interactivity and communication of results.
 
-## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+## 🧭 Mapping Business Requirements to Visualisations
+| Business Requirement        | Visualisation Type | Rationale |
+|-----------------------------|--------------------|-----------|
+| Fuel type impacts car price | Boxplot & T-test   | Compare price distributions by fuel type |
+| Fuel efficiency vs price | Scatter plot & correlation |Show inverse trend between price and efficiency |
+| Car body style influences price | Boxplot & ANOVA | Compare price averages across body styles |
+| Drive type comparison | Grouped bar chart & T-test | Show whether FWD cars are cheaper than RWD |
+| Identify top predictors | Feature importance plot | Show which variables most strongly predict price |
+| Interactive dashboard | Streamlit filters & plots | Allow user-driven data exploration |
 
 ## Analysis techniques used
 * List the data analysis methods used and explain limitations or alternative approaches.

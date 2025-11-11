@@ -113,6 +113,60 @@ def show_scatterplot(df) -> None:
     ax.set_xlabel("Fuel Efficiency (avg_mpg)")
     ax.set_ylabel("Price (£)")
     st.pyplot(fig)
+    st.markdown("**Interpretation:** The scatter plot shows a negative "
+                "relationship — as average MPG increases, car price tends "
+                "to decrease. This supports the hypothesis of an inverse "
+                "correlation.")
+
+
+def show_heatmap(df) -> None:
+    """Displays heatmap of correlation matrix.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None
+    """
+    corr = df[["avg_mpg", "price"]].corr()
+    fig, ax = plt.subplots(figsize=(5, 4))
+    sns.heatmap(corr, annot=True, cmap="coolwarm", ax=ax)
+    ax.set_title("Correlation Matrix Heatmap")
+    st.pyplot(fig)
+    st.markdown("**Explanation:** The heatmap confirms a negative correlation"
+                "between `avg_mpg` and `price` while horsepower and enginesize"
+                "are positively correlated with price.")
+
+def plot_bubble(df, x_feature, y_feature) -> None:
+    """Plots bubble plot of two features with size based on price.
+
+    Args:
+        df (pd.DataFrame)
+        x_feature (str): The x-axis feature column name.
+        y_feature (str): The y-axis feature column name.
+
+    Returns: None
+    """
+    fig, ax = plt.subplots(figsize=(7, 4))
+    sizes = (df["price"] - df["price"].min()) / (df["price"].max() - df["price"].min()) * 1000
+    sns.scatterplot(data=df, x=x_feature, y=y_feature,
+                    size=sizes, sizes=(20, 200), alpha=0.5, ax=ax)
+    ax.set_title(f"Bubble Plot of {y_feature} vs {x_feature}")
+    ax.set_xlabel(x_feature)
+    ax.set_ylabel(y_feature)
+    st.pyplot(fig)
+    st.markdown("""
+    **Explanation:**
+    Each bubble represents an individual car model.  
+    The **x-axis** shows fuel efficiency (`avg_mpg`), while the **y-axis**
+    shows price.
+    **Bubble size** corresponds to `enginesize`, and **colour** distinguishes
+                fuel type.
+
+    A clear trend emerges — vehicles with **lower fuel efficiency (smaller MPG
+    values)** tend to be **more expensive**, 
+    often due to their larger engine sizes. Conversely, cars with higher MPG are usually priced lower and 
+    have smaller engines. This visual supports the hypothesis of an **inverse relationship between price and fuel efficiency**.
+    """)
 
 
 def show_correlation_results(df) -> None:
@@ -227,7 +281,16 @@ def run_page(df) -> None:
     show_efficiency_price_metrics(df)  # Show average price metrics
     col1, col2 = st.columns(2)  # Create two columns for layout
     with col1:
-        show_scatterplot(df)  # Show scatterplot of price vs avg_mpg
+        tab1, tab2, tab3= st.tabs(["Scatter + Regression",
+                                   "Heatmap", "Bubble Plot"])
+        
+        with tab1:
+            show_scatterplot(df)  # Show scatterplot of price vs avg_mpg
+        with tab2:
+            show_heatmap(df)  # Show heatmap of correlation matrix
+        with tab3:
+            plot_bubble(df, "avg_mpg", "price")  # Bubble plot
+
     with col2:
         show_correlation_results(df)  # Show correlation and test results
         show_interpretation(df)  # Show interpretation

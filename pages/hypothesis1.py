@@ -30,8 +30,10 @@ def calculate_correlation(df) -> tuple:
 
     Returns: tuple: pearson_corr, pearson_pval, spearman_corr, spearman_pval
     '''
-    pearson_corr, pearson_pval = pearsonr(df["fueltype"], df["price"])
-    spearman_corr, spearman_pval = spearmanr(df["fueltype"], df["price"])
+
+    df['fueltype_encoded'] = df['fueltype'].map({'petrol': 0, 'diesel': 1})
+    pearson_corr, pearson_pval = pearsonr(df["fueltype_encoded"], df["price"])
+    spearman_corr, spearman_pval = spearmanr(df["fueltype_encoded"], df["price"])
     return pearson_corr, pearson_pval, spearman_corr, spearman_pval
 
 
@@ -112,6 +114,43 @@ def plot_boxplot(df) -> None:
     fig, ax = plt.subplots(figsize=(6, 4))
     sns.boxplot(x='fueltype', y='price', data=df, palette='Set2', ax=ax)
     st.pyplot(fig)
+    st.markdown("**Explanation:** The boxplot shows the price distribution by "
+                "fuel type. Diesel cars typically have a higher median price "
+                "and wider range than petrol cars, suggesting greater "
+                "variation among diesel models.")
+
+
+def plot_violin(df) -> None:
+    """Displays violin plot of price by fuel type.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None"""
+    st.markdown("### Price Distribution by Fuel Type")
+    fig, ax = plt.subplots(figsize=(6, 4))
+    sns.violinplot(x='fueltype', y='price', data=df, palette='Set2', ax=ax)
+    st.pyplot(fig)
+    st.markdown("**Explanation:** The violin plot reveals that petrol prices "
+                "are more tightly clustered, while diesel prices are more "
+                "spread out, indicating a broader pricing range.")
+
+
+def plot_kde(df) -> None:
+    """Displays KDE plot of price by fuel type.
+
+    Args:
+        df (pd.DataFrame)
+
+    Returns: None"""
+    st.markdown("### Price Distribution by Fuel Type")
+    fig, ax = plt.subplots(figsize=(6, 4))
+    sns.kdeplot(data=df, x='price', hue='fueltype', fill=True,
+                common_norm=False, palette='Set2', alpha=0.5, ax=ax)
+    st.pyplot(fig)
+    st.markdown("**Explanation:** This shows that diesel cars are generally "
+                "priced higher than petrol cars, with noticeable overlap "
+                "in the mid-range price band.")
 
 
 def show_correlation_results(df) -> None:
@@ -240,7 +279,13 @@ def run_page(df) -> None:
     show_price_metrics(df)  # Show average price metrics
     col1, col2 = st.columns(2)  # Create two columns for layout
     with col1:
-        plot_boxplot(df)  # Show boxplot of price by fuel type
+        tab1, tab2, tab3 = st.tabs(["Boxplot", "Violin", "KDE"])
+        with tab1:
+            plot_boxplot(df)  # Plot boxplot of price by fuel type
+        with tab2:
+            plot_violin(df)  # Plot violin plot of price by fuel type
+        with tab3:
+            plot_kde(df)  # Plot KDE of price by fuel type
     with col2:
         show_correlation_results(df)  # Show correlation and test results
         show_interpretation(df)  # Show interpretation

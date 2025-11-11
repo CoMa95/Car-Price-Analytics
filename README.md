@@ -50,9 +50,24 @@ The following hypotheses were tested using statistical and visual analysis:
 *Validation:* M linear regression model trained on key numerical predictors to assess variable importance.
 
 ## Project Plan
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
-* Why did you choose the research methodologies you used?
+### High-level Steps
+
+1. Data Collection – Load dataset from Kaggle (car_prices.csv).
+2. Data Cleaning – Handle missing values, remove duplicates, and standardise categorical values (e.g. convert “gas” → “petrol”).
+3. Exploratory Data Analysis (EDA) – Explore distributions, correlations, and outliers.
+4. Feature Engineering – Create derived variables for improved interpretability.
+5. Hypothesis Testing – Perform statistical tests and visual validation for each hypothesis.
+6. Model Building – Train and evaluate a regression model to identify top predictors of car price.
+7. Dashboard Development – Build an interactive Streamlit app with filters and visualisations.
+8. Deployment – Deploy final dashboard to Streamlit Cloud.
+
+### Methodology Rationale
+
+- **Python (pandas, numpy)** for data cleaning and transformation.
+- **Statistical testing (scipy)** for hypothesis validation.
+- **Plotly and Seaborn** for high-quality, interactive visualisation.
+- **scikit-learn** for regression modelling and predictor ranking.
+- **Streamlit** for interactivity and communication of results.
 
 ## The rationale to map the business requirements to the Data Visualisations
 * List your business requirements and a rationale to map them to the Data Visualisations

@@ -22,7 +22,6 @@ After cleaning and feature engineering, the dataset included several derived var
 - `engine_efficiency` – horsepower divided by engine size
 - `avg_mpg` – combined fuel efficiency based on city and highway mileage
 
-
 ## 💼 Business Requirements
 
 The primary business goal is to identify which factors most strongly influence car prices and provide an interactive tool for exploring these relationships.
@@ -34,8 +33,8 @@ Specific business requirements include:
 3. Identify manufacturer trends – Compare average prices, engine efficiency, and performance metrics across manufacturers.
 4. Provide an interactive dashboard – Allow users to apply filters and drill down into subsets of data to explore patterns dynamically.
 
-
 ## 🧠 Hypotheses and Validation
+
 The following hypotheses were tested using statistical and visual analysis:
 
 1. Fuel type impacts car price.\
@@ -50,6 +49,7 @@ The following hypotheses were tested using statistical and visual analysis:
 *Validation:* M linear regression model trained on key numerical predictors to assess variable importance.
 
 ## 🧩 Project Plan
+
 ### High-level Steps
 
 1. Data Collection – Load dataset from Kaggle (car_prices.csv).
@@ -70,6 +70,7 @@ The following hypotheses were tested using statistical and visual analysis:
 - **Streamlit** for interactivity and communication of results.
 
 ## 🧭 Mapping Business Requirements to Visualisations
+
 | Business Requirement        | Visualisation Type | Rationale |
 |-----------------------------|--------------------|-----------|
 | Fuel type impacts car price | Boxplot & T-test   | Compare price distributions by fuel type |
@@ -94,6 +95,7 @@ The following hypotheses were tested using statistical and visual analysis:
 - Some body styles and drive types had few examples, limiting test power.
 
 ### Generative AI Contributions
+
 - Helped draft hypotheses, optimise code, and streamline dashboard layout.
 - Supported the creation of structured test scripts and markdown documentation.
 
@@ -144,27 +146,54 @@ The following hypotheses were tested using statistical and visual analysis:
 - Technical insights are summarised with statistical output text and markdown explanations.
 
 ## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+**NaN Error When Filters Exclude a Group:**\
+On both hypothesis pages, when user-applied filters remove all records for a category (e.g. one fuel type, drive wheel, or body style), the corresponding statistical test or group mean calculation can return NaN or raise a ValueError.
+
+This happens because functions such as ttest_ind() and groupby().mean() require non-empty sample groups to operate correctly.
+The planned fix is to add a validation step that checks whether both comparison groups contain data before running the test, and display a user-friendly message if one group is empty.
+This issue does not affect other dashboard functionality or visuals.
 
 ## Development Roadmap
-* What challenges did you face, and what strategies were used to overcome these challenges?
-* What new skills or tools do you plan to learn next based on your project experience? 
+
+### Challenges
+
+- **Repository Desynchronisation:** \
+    One team member’s local repository fell significantly behind the others, causing version conflicts and missing updates. This required coordinated effort to resynchronise branches, rebase changes, and ensure all code and data files were correctly aligned before deployment. The team used GitHub’s pull request history and commit comparison tools to identify discrepancies and restore consistency. Although it delayed some progress, it improved everyone’s understanding of version control best practices.
+- **Filter-Related NaN Errors:**\
+    Filters excluding all records from one group on hypothesis pages caused NaN or empty sample errors during statistical tests. This will be resolved in future updates by validating group data before running tests.
+- **Streamlit Session State Management:**\
+    Maintaining consistent filters across multiple pages introduced complexity. The team used `st.session_state` to store global filters, though further optimisation is planned.
+- **Responsive Layout and Performance:**\
+    Some larger visualisations caused temporary lag or layout stretching on smaller screens. Future iterations will include layout tuning and caching improvements.
+
+### Next Steps and Skills to Learn
+- **Version Control Mastery:**\
+    Continue improving Git and GitHub collaboration practices — particularly resolving merge conflicts, using branching workflows, and managing pull requests effectively.
+- **Advanced Streamlit Techniques:**\
+    Learn more about session state optimisation, dynamic page navigation, and responsive dashboard design.
+- **Machine Learning Modelling:**\
+    Build on the regression model by experimenting with tree-based or ensemble models (e.g., Random Forest, XGBoost) to improve prediction accuracy.
+- **Performance Optimisation:**\
+    Explore caching strategies, modularisation, and profiling to make Streamlit apps faster and more scalable.
 
 ## Deployment
-### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+### Streamlit Cloud
 
-1. Log in to Heroku and create an App
-2. From the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+The app was deployed using [Steamlit Cloud](http://streamlit.io).
+
+Live Link: https://car-price-analysis.streamlit.app
+
+(Replace with your actual Streamlit deployment link)
+
+#### Deployment Steps
+
+1. Push project repository to GitHub.
+2. Log in to Streamlit Cloud.
+3. Create a new app, select your repository and main branch.
+4. Set the entry point to dashboard_app.py.
+5. Include all dependencies in requirements.txt.
+6. Deploy the app — Streamlit builds and hosts automatically.
 
 
 ## Main Data Analysis Libraries

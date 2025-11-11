@@ -237,7 +237,7 @@ def show_interpretation(df) -> None:
     if (t_pval < 0.05 or u_pval < 0.05):
         st.success("""
         **Summary:**
-        - The p-values for both the t-test and Mann–Whitney U test are below
+        - The p-values for either the t-test and Mann–Whitney U test are below
             0.05, indicating a **statistically significant difference** in car
             prices between petrol and diesel vehicles.
         - This supports the **alternative hypothesis (H₁)** that fuel type

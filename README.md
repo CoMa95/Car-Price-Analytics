@@ -35,8 +35,19 @@ Specific business requirements include:
 4. Provide an interactive dashboard – Allow users to apply filters and drill down into subsets of data to explore patterns dynamically.
 
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+## 🧠 Hypotheses and Validation
+The following hypotheses were tested using statistical and visual analysis:
+
+1. Fuel type impacts car price.\
+*Validation:* Independent samples T-test and boxplots comparing average prices between fuel types (petrol vs diesel).
+2. Fuel efficiency is inversely correlated with price.\
+*Validation:* Correlation analysis, scatter plots, and Mann–Whitney U test on high vs low efficiency groups.
+3. Car body style influences car price.\
+*Validation:* ANOVA and boxplots comparing mean prices across body types (sedan, hatchback, convertible, etc.).
+4. Front wheel drive cars are cheaper than rear wheel drive cars.\
+*Validation:* T-test and group comparisons using bar and box plots.
+5. Top predictors of price can be identified through regression modelling.\
+*Validation:* M linear regression model trained on key numerical predictors to assess variable importance.
 
 ## Project Plan
 * Outline the high-level steps taken for the analysis.

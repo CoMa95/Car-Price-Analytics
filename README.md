@@ -146,12 +146,16 @@ The following hypotheses were tested using statistical and visual analysis:
 
 ## Unfixed Bugs
 
-**NaN Error When Filters Exclude a Group:**\
+- **NaN Error When Filters Exclude a Group:**\
 On both hypothesis pages, when user-applied filters remove all records for a category (e.g. one fuel type, drive wheel, or body style), the corresponding statistical test or group mean calculation can return NaN or raise a ValueError.
 
-This happens because functions such as ttest_ind() and groupby().mean() require non-empty sample groups to operate correctly.
+  This happens because functions such as ttest_ind() and groupby().mean() require non-empty sample groups to operate correctly.
 The planned fix is to add a validation step that checks whether both comparison groups contain data before running the test, and display a user-friendly message if one group is empty.
 This issue does not affect other dashboard functionality or visuals.
+- **Page Headers**\
+Some page headers are emmitted or incorrectly named some have "Western Car Price System Analysis" others have "Car Price Analytics Dashboard"
+- **Team Name**\
+The notebooks do not record the team name and still have "tbc".
 
 ## Development Roadmap
 

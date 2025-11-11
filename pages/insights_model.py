@@ -4,8 +4,6 @@ import joblib  # or pickle, depending on how you saved the model
 from pathlib import Path
 
 # ---------------- Page setup ----------------
-st.set_page_config(page_title="Predictive Model", page_icon="🤖", layout="wide")
-
 st.title("Predictive Model Showcase")
 st.caption(
     "This section demonstrates a multiple linear regression model trained to estimate car prices "

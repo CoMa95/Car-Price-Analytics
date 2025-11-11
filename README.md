@@ -97,9 +97,15 @@ The following hypotheses were tested using statistical and visual analysis:
 - Helped draft hypotheses, optimise code, and streamline dashboard layout.
 - Supported the creation of structured test scripts and markdown documentation.
 
-## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
+## ⚖️ Ethical Considerations
+
+Data privacy: Dataset is anonymised and publicly available.
+
+Bias: Some manufacturers are overrepresented, possibly biasing results.
+
+Fairness: Non-parametric tests were used to handle unequal variances.
+
+Transparency: All cleaning and transformation steps are documented in the notebooks.
 
 ## Dashboard Design
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.

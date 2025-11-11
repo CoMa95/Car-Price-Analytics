@@ -209,23 +209,20 @@ Live Link: https://car-price-analysis.streamlit.app
 | scikit-learn   | Regression modelling | ```LinearRegression().fit(X_train, y_train)```     |
 | streamlit      | Dashboard interface  | ```st.plotly_chart(fig)```                         |
 
-## Credits 
+## 🙏 Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+### Content
 
-### Content 
+- Dataset: [Car Price Prediction Dataset – Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction)
+- Code Institute Hackathon project structure
+- Streamlit and Plotly documentation
+- Stack Overflow for troubleshooting Streamlit state management
+- Assistance and co-authoring support by ChatGPT (OpenAI GPT-5) ideation, code optimisation, hypothesis design, documentation checking, and Streamlit integration support
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+## 💬 Acknowledgements
 
-### Media
+Special thanks to:
 
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-
-## Acknowledgements (optional)
-* Thank the people who provided support through this project.
+- Code Institute Hackathon mentors for their guidance and feedback
+- Team members for collaboration, testing, and deployment
+- OpenAI ChatGPT (GPT-5) for providing technical writing, code refinement, and analytical assistance

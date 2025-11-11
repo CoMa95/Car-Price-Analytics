@@ -183,7 +183,7 @@ This issue does not affect other dashboard functionality or visuals.
 
 The app was deployed using [Streamlit Cloud](https://streamlit.io).
 
-Live Link: [https://car-price-analysis.streamlit.app](https://car-price-analysis.streamlit.app)
+Live Link: [https://car-analytics-codeinstitute.streamlit.app/](https://car-analytics-codeinstitute.streamlit.app/)
 
 (Replace with your actual Streamlit deployment link)
 

@@ -5,8 +5,22 @@ Car Price Analysis Dashboard is an interactive data exploration and hypothesis t
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
-## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+## 📊 Dataset Content
+
+The dataset used in this project is sourced from the  [Car Price Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction).
+
+It contains detailed information about various car models, including:
+
+- **Specifications:** horsepower, engine size, wheelbase, weight, and dimensions
+- **Categorical attributes:** fuel type, drive wheel, body style, manufacturer, and engine type
+- **Target variable:** price (in USD)
+
+After cleaning and feature engineering, the dataset included several derived variables such as:
+
+- `price_per_hp` – price per horsepower
+- `power_to_weight_ratio` – horsepower divided by curb weight
+- `engine_efficiency` – horsepower divided by engine size
+- `avg_mpg` – combined fuel efficiency based on city and highway mileage
 
 
 ## Business Requirements

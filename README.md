@@ -46,7 +46,8 @@ The following hypotheses were tested using statistical and visual analysis:
 4. Front wheel drive cars are cheaper than rear wheel drive cars.\
 *Validation:* T-test and group comparisons using bar and box plots.
 5. Top predictors of price can be identified through regression modelling.\
-*Validation:* M linear regression model trained on key numerical predictors to assess variable importance.
+*Validation:* Multiple linear regression model trained on key numerical predictors to assess variable importance.
+
 
 ## 🧩 Project Plan
 
@@ -146,6 +147,7 @@ The following hypotheses were tested using statistical and visual analysis:
 - Technical insights are summarised with statistical output text and markdown explanations.
 
 ## Unfixed Bugs
+
 **NaN Error When Filters Exclude a Group:**\
 On both hypothesis pages, when user-applied filters remove all records for a category (e.g. one fuel type, drive wheel, or body style), the corresponding statistical test or group mean calculation can return NaN or raise a ValueError.
 
@@ -167,6 +169,7 @@ This issue does not affect other dashboard functionality or visuals.
     Some larger visualisations caused temporary lag or layout stretching on smaller screens. Future iterations will include layout tuning and caching improvements.
 
 ### Next Steps and Skills to Learn
+
 - **Version Control Mastery:**\
     Continue improving Git and GitHub collaboration practices — particularly resolving merge conflicts, using branching workflows, and managing pull requests effectively.
 - **Advanced Streamlit Techniques:**\
@@ -180,7 +183,7 @@ This issue does not affect other dashboard functionality or visuals.
 
 ### Streamlit Cloud
 
-The app was deployed using [Steamlit Cloud](http://streamlit.io).
+The app was deployed using [Streamlit Cloud](https://streamlit.io).
 
 Live Link: https://car-price-analysis.streamlit.app
 
@@ -217,7 +220,7 @@ Live Link: https://car-price-analysis.streamlit.app
 - Code Institute Hackathon project structure
 - Streamlit and Plotly documentation
 - Stack Overflow for troubleshooting Streamlit state management
-- Assistance and co-authoring support by ChatGPT (OpenAI GPT-5) ideation, code optimisation, hypothesis design, documentation checking, and Streamlit integration support
+- Assistance and co-authoring support by ChatGPT (OpenAI GPT-5), ideation, code optimisation, hypothesis design, documentation checking, and Streamlit integration support
 
 ## 💬 Acknowledgements
 

@@ -1,6 +1,6 @@
 # 🚗 Car Price Analysis Dashboard
 
-Car Price Analysis Dashboard is an interactive data exploration and hypothesis testing tool built using Streamlit.The app allows users to explore relationships between car specifications and prices, validate hypotheses, and visualise insights through interactive charts. It was developed as part of the Code Institute Hackathon – Dashboard Essentials, using Python and data analytics techniques to produce actionable insights.
+Car Price Analysis Dashboard is an interactive data exploration and hypothesis testing tool built using Streamlit. The app allows users to explore relationships between car specifications and prices, validate hypotheses, and visualise insights through interactive charts. It was developed as part of the Code Institute Hackathon – Dashboard Essentials, using Python and data analytics techniques to produce actionable insights.
 
 ## ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
@@ -68,6 +68,12 @@ The following hypotheses were tested using statistical and visual analysis:
 - **scikit-learn** for regression modelling and predictor ranking.
 - **Streamlit** for interactivity and communication of results.
 
+### Team Communication and Collaboration
+
+- The team collaborated primarily through Discord, using dedicated channels for daily discussions, progress updates, and file sharing. Regular virtual meetings were held to coordinate analysis, dashboard design, and documentation tasks.
+- Version control and collaboration were managed through GitHub, where team members worked on feature branches, created pull requests, and resolved merge conflicts collaboratively.
+- This approach ensured transparency, accountability, and efficient progress throughout the hackathon.
+
 ## 🧭 Mapping Business Requirements to Visualisations
 
 | Business Requirement            | Visualisation Type         | Rationale                                        |
@@ -109,53 +115,62 @@ The following hypotheses were tested using statistical and visual analysis:
 
 ### Dashboard Pages
 
-1. **Overview**
-   - Dataset summary and KPIs (e.g., average price, average MPG).
-   - Correlation heatmap of numeric features.
-2. **Hypothesis 1: Fuel Type Comparison**
-   - Box Plot showing the distribution of prices by fuel type.
-   - Violin Plot illustrating the spread of price by fuel type.
-   - KDE Plot showing the density distribution of car prices by fuel
+#### 1. Overview
+
+- Dataset summary and KPIs (e.g., average price, average MPG).
+- Correlation heatmap of numeric features.
+
+#### 2. Hypothesis 1: Fuel Type Comparison
+
+- _Box Plot_ showing the distribution of prices by fuel type.
+- _Violin Plot_ illustrating the spread of price by fuel type.
+- _KDE Plot_ showing the density distribution of car prices by fuel
      type, highlighting where price values are most concentrated
      and how they differ between fuel types.
-   - T-Test and Mann–Whitney U Test conducted to assess whether price differences between fuel types are statistically significant.
-   - Pearson and Spearman correlation tests performed to examine the strength and direction of relationships between fuel type and price.
-   - Summary statistics (mean and median prices) used to contextualise the findings.
-3. Hypothesis 2: Fuel Efficiency and Price Relationship
-   - Scatter Plot with regression line showing the relationship between fuel efficiency (average MPG) and car price, illustrating the strength and direction of correlation.
-   - Heatmap visualising correlations between key numerical features, highlighting how fuel efficiency relates to price and other performance variables.
-   - Bubble Plot displaying the combined effect of fuel efficiency, engine size, and price, providing a multivariate view of how these factors interact.
-   - Pearson and Spearman correlation tests conducted to evaluate both linear and monotonic relationships between fuel efficiency and price.
-   - T-Test and Mann–Whitney U Test performed to determine whether price differences between cars with varying fuel efficiency levels are statistically significant.
-   - Descriptive statistics (mean MPG and average price) used to support and contextualise findings.
-4. _Hypothesis 3: Car Body Type vs Price_
+- _T-Test_ and _Mann–Whitney U Test_ conducted to assess whether price differences between fuel types are statistically significant.
+- _Pearson_ and _Spearman_ correlation tests performed to examine the strength and direction of relationships between fuel type and price.
+- Summary statistics (mean and median prices) used to contextualise the findings.
+
+#### 3. Hypothesis 2: Fuel Efficiency and Price Relationship
+
+- _Scatter Plot with Regression_ line showing the relationship between fuel efficiency (average MPG) and car price, illustrating the strength and direction of correlation.
+- _Heatmap_ visualising correlations between key numerical features, highlighting how fuel efficiency relates to price and other performance variables.
+- _Bubble Plot_ displaying the combined effect of fuel efficiency, engine size, and price, providing a multivariate view of how these factors interact.
+- _Pearson_ and _Spearman_ correlation tests conducted to evaluate both linear and monotonic relationships between fuel efficiency and price.
+- _T-Test_ and _Mann–Whitney U Test_ performed to determine whether price differences between cars with varying fuel efficiency levels are statistically significant.
+- Descriptive statistics (mean MPG and average price) used to support and contextualise findings.
+
+#### 4. Hypothesis 3: Car Body Type vs Price
 
 - This page examines how different car body types (such as sedan, hatchback, coupe, convertible, and SUV) influence car prices.
 - The data is grouped by car body type, and summary statistics (mean, median, minimum, maximum) are calculated for each group.
 - _Bar Plot_ visualizes the average price per car body type, providing a clear comparison across categories.
 - _Box Plot_ illustrates the price distribution for each body type, showing variations and potential outliers.
 - The analysis suggests that SUVs and coupes tend to have higher average prices, while hatchbacks and sedans are generally more affordable.
-- Page created by _Hidaia_.
 
-5. _Hypothesis 4: Front Wheel Drive Cars are Cheaper than Rear Wheel Drive_
-
+#### 5. Hypothesis 4: Front Wheel Drive Cars are Cheaper than Rear Wheel Drive
+    
 - This page analyzes whether front-wheel drive (FWD) cars are generally cheaper than rear-wheel drive (RWD) cars.
 - The data is filtered and grouped based on the drivewheel variable, and summary statistics (mean, median, minimum, maximum) are calculated for each drive type.
 - _Bar Plot_ shows the average car price for each drive type (FWD, RWD, 4WD), providing a clear visual comparison between them.
 - _Box Plot_ illustrates the price distribution across drive wheel types, showing variability and potential outliers.
 - _T-Test_ is performed to statistically compare prices between FWD and RWD cars.
-  - Displays the calculated t-statistic and p-value results.
-  - Determines whether the price difference between the two drive types is statistically significant (p < 0.05).
+- Displays the calculated t-statistic and p-value results.
+- Determines whether the price difference between the two drive types is statistically significant (p < 0.05).
 - Descriptive statistics are presented to support and contextualize the findings.
 - Findings indicate whether FWD cars tend to have lower average prices than RWD cars.
-- Page created by _Hidaia_.
 
-6. Hypothesis 5: What are features which highly predict price?
-   - Cosmin please write your description here.
-7. Price Predictor Page
-   - Cosmin please put your description here.
-8. Insights Page
-   - Key takeaways and conclusions from all analyses.
+#### 6. Hypothesis 5: What are features which highly predict price?
+
+- “Description pending final update by team member (Cosmin).”
+
+#### 7. Price Predictor Page
+
+- “Description pending final update by team member (Cosmin).”
+
+#### 8. Insights Page
+
+- Key takeaways and conclusions from all analyses.
 
 ### Communication
 
@@ -171,9 +186,11 @@ On both hypothesis pages, when user-applied filters remove all records for a cat
 The planned fix is to add a validation step that checks whether both comparison groups contain data before running the test, and display a user-friendly message if one group is empty.
 This issue does not affect other dashboard functionality or visuals.
 - **Page Headers**\
-Some page headers are emmitted or incorrectly named some have "Western Car Price System Analysis" others have "Car Price Analytics Dashboard"
+Some page headers are omitted or incorrectly named some have "Western Car Price System Analysis" others have "Car Price Analytics Dashboard"
 - **Team Name**\
 The notebooks do not record the team name and still have "tbc".
+- **Page Layout**\
+The layout of some pages need improvement.
 
 ## Development Roadmap
 

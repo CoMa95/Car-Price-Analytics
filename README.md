@@ -23,8 +23,16 @@ After cleaning and feature engineering, the dataset included several derived var
 - `avg_mpg` – combined fuel efficiency based on city and highway mileage
 
 
-## Business Requirements
-* Describe your business requirements
+## 💼 Business Requirements
+
+The primary business goal is to identify which factors most strongly influence car prices and provide an interactive tool for exploring these relationships.
+
+Specific business requirements include:
+
+1. Understand price drivers – Determine which car features (engine size, horsepower, fuel type, etc.) have the greatest impact on price.
+2. Compare fuel efficiency and cost – Analyse whether more fuel-efficient cars are cheaper or more expensive.
+3. Identify manufacturer trends – Compare average prices, engine efficiency, and performance metrics across manufacturers.
+4. Provide an interactive dashboard – Allow users to apply filters and drill down into subsets of data to explore patterns dynamically.
 
 
 ## Hypothesis and how to validate?

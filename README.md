@@ -2,8 +2,7 @@
 
 Car Price Analysis Dashboard is an interactive data exploration and hypothesis testing tool built using Streamlit.The app allows users to explore relationships between car specifications and prices, validate hypotheses, and visualise insights through interactive charts. It was developed as part of the Code Institute Hackathon – Dashboard Essentials, using Python and data analytics techniques to produce actionable insights.
 
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
+## ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 ## 📊 Dataset Content
 
@@ -47,7 +46,6 @@ The following hypotheses were tested using statistical and visual analysis:
 *Validation:* T-test and group comparisons using bar and box plots.
 5. Top predictors of price can be identified through regression modelling.\
 *Validation:* Multiple linear regression model trained on key numerical predictors to assess variable importance.
-
 
 ## 🧩 Project Plan
 
@@ -121,7 +119,7 @@ The following hypotheses were tested using statistical and visual analysis:
         type, highlighting where price values are most concentrated
         and how they differ between fuel types.
     - T-Test and Mann–Whitney U Test conducted to assess whether price differences between fuel types are statistically significant.
-    - Pearson and Spearman correlation tests performed to examine the strength and direction of relationships between fuel type and price. 
+    - Pearson and Spearman correlation tests performed to examine the strength and direction of relationships between fuel type and price.
     - Summary statistics (mean and median prices) used to contextualise the findings.
 3. Hypothesis 2: Fuel Efficiency and Price Relationship
     - Scatter Plot with regression line showing the relationship between fuel efficiency (average MPG) and car price, illustrating the strength and direction of correlation.
@@ -133,7 +131,7 @@ The following hypotheses were tested using statistical and visual analysis:
 4. Hypothesis 3: Car body style influences car price
     - Hidaia please write your description here.
 5. Hypothesis 4: Front wheel drive cars are cheaper thatn rear wheel drive
-    - Hidaia please write you description of page here. 
+    - Hidaia please write you description of page here.
 6. Hypothesis 5: What are features which highly predict price?
     - Cosmin please write your description here.
 7. Price Predictor Page
@@ -141,7 +139,7 @@ The following hypotheses were tested using statistical and visual analysis:
 8. Insights Page
     - Key takeaways and conclusions from all analyses.
 
-### Communication:
+### Communication
 
 - Interactive visuals (Plotly) allow exploration by non-technical users.
 - Technical insights are summarised with statistical output text and markdown explanations.
@@ -185,7 +183,7 @@ This issue does not affect other dashboard functionality or visuals.
 
 The app was deployed using [Streamlit Cloud](https://streamlit.io).
 
-Live Link: https://car-price-analysis.streamlit.app
+Live Link: [https://car-price-analysis.streamlit.app](https://car-price-analysis.streamlit.app)
 
 (Replace with your actual Streamlit deployment link)
 
@@ -198,13 +196,12 @@ Live Link: https://car-price-analysis.streamlit.app
 5. Include all dependencies in requirements.txt.
 6. Deploy the app — Streamlit builds and hosts automatically.
 
-
 ## 🧰 Main Data Analysis Libraries
 
 | Library        | Purpose              | Example Usage                                      |
 |----------------|----------------------|----------------------------------------------------|
 | pandas         | Data manipulation    | ```df.groupby('fueltype')['price'].mean()```       |
-| numpy	         | Numeric operations   | ```np.log(df['price'])```                          |
+| numpy          | Numeric operations   | ```np.log(df['price'])```                          |
 | matplotlib     | Static plots         | ```plt.hist(df['price'], bins=20)```               |
 | seaborn        | Statistical plots    | ```sns.boxplot(x='fueltype', y='price', data=df)```|
 | plotly.express | Interactive visuals  | ```px.scatter(df, x='horsepower', y='price')```    |

@@ -79,11 +79,23 @@ The following hypotheses were tested using statistical and visual analysis:
 | Identify top predictors | Feature importance plot | Show which variables most strongly predict price |
 | Interactive dashboard | Streamlit filters & plots | Allow user-driven data exploration |
 
-## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
-* How did you use generative AI tools to help with ideation, design thinking and code optimisation?
+## 🔍 Analysis Techniques Used
+
+- Descriptive statistics – means, medians, and spreads for numeric variables.
+- Correlation analysis – Pearson and Spearman coefficients.
+- Inferential tests – T-tests, Mann–Whitney U tests, and ANOVA for categorical group comparisons.
+- Regression modelling – Multiple linear regression to identify predictors.
+- Visual analytics – Heatmaps, scatter plots, boxplots, and bar charts.
+
+### Limitations
+
+- Dataset size limited the complexity of models used.
+- Price data may not account for regional or inflationary effects.
+- Some body styles and drive types had few examples, limiting test power.
+
+### Generative AI Contributions
+- Helped draft hypotheses, optimise code, and streamline dashboard layout.
+- Supported the creation of structured test scripts and markdown documentation.
 
 ## Ethical considerations
 * Were there any data privacy, bias or fairness issues with the data?

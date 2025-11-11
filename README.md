@@ -1,5 +1,7 @@
 # 🚗 Car Price Analysis Dashboard
 
+_Developed by_ **Pylance in the Streamlit**
+
 Car Price Analysis Dashboard is an interactive data exploration and hypothesis testing tool built using Streamlit. The app allows users to explore relationships between car specifications and prices, validate hypotheses, and visualise insights through interactive charts. It was developed as part of the Code Institute Hackathon – Dashboard Essentials, using Python and data analytics techniques to produce actionable insights.
 
 ## ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)

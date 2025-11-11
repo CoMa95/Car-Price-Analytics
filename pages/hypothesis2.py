@@ -139,6 +139,7 @@ def show_heatmap(df) -> None:
                 "between `avg_mpg` and `price` while horsepower and enginesize"
                 "are positively correlated with price.")
 
+
 def plot_bubble(df, x_feature, y_feature) -> None:
     """Plots bubble plot of two features with size based on price.
 
@@ -150,7 +151,8 @@ def plot_bubble(df, x_feature, y_feature) -> None:
     Returns: None
     """
     fig, ax = plt.subplots(figsize=(7, 4))
-    sizes = (df["price"] - df["price"].min()) / (df["price"].max() - df["price"].min()) * 1000
+    sizes = (df["price"] - df["price"].min()) / (df["price"].max() -
+                                                 df["price"].min()) * 1000
     sns.scatterplot(data=df, x=x_feature, y=y_feature,
                     size=sizes, sizes=(20, 200), alpha=0.5, ax=ax)
     ax.set_title(f"Bubble Plot of {y_feature} vs {x_feature}")
@@ -159,16 +161,17 @@ def plot_bubble(df, x_feature, y_feature) -> None:
     st.pyplot(fig)
     st.markdown("""
     **Explanation:**
-    Each bubble represents an individual car model.  
+    Each bubble represents an individual car model.
     The **x-axis** shows fuel efficiency (`avg_mpg`), while the **y-axis**
     shows price.
     **Bubble size** corresponds to `enginesize`, and **colour** distinguishes
                 fuel type.
 
     A clear trend emerges — vehicles with **lower fuel efficiency (smaller MPG
-    values)** tend to be **more expensive**, 
-    often due to their larger engine sizes. Conversely, cars with higher MPG are usually priced lower and 
-    have smaller engines. This visual supports the hypothesis of an **inverse relationship between price and fuel efficiency**.
+    values)** tend to be **more expensive**, often due to their larger engine
+    sizes. Conversely, cars with higher MPG are usually priced lower and have
+    smaller engines. This visual supports the hypothesis of an **inverse
+    relationship between price and fuel efficiency**.
     """)
 
 
@@ -284,9 +287,8 @@ def run_page(df) -> None:
     show_efficiency_price_metrics(df)  # Show average price metrics
     col1, col2 = st.columns(2)  # Create two columns for layout
     with col1:
-        tab1, tab2, tab3= st.tabs(["Scatter + Regression",
-                                   "Heatmap", "Bubble Plot"])
-        
+        tab1, tab2, tab3 = st.tabs(["Scatter + Regression",
+                                    "Heatmap", "Bubble Plot"])
         with tab1:
             show_scatterplot(df)  # Show scatterplot of price vs avg_mpg
         with tab2:

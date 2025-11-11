@@ -36,7 +36,8 @@ def calculate_correlation(df) -> tuple:
 
     df['fueltype_encoded'] = df['fueltype'].map({'petrol': 0, 'diesel': 1})
     pearson_corr, pearson_pval = pearsonr(df["fueltype_encoded"], df["price"])
-    spearman_corr, spearman_pval = spearmanr(df["fueltype_encoded"], df["price"])
+    spearman_corr, spearman_pval = spearmanr(df["fueltype_encoded"],
+                                             df["price"])
     return pearson_corr, pearson_pval, spearman_corr, spearman_pval
 
 

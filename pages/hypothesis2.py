@@ -1,7 +1,10 @@
 """
 Hypothesis 2 Page: Fuel Efficiency Correlation with Car Price
+
 This page tests the hypothesis that fuel efficiency (measured by average
 miles per gallon, avg_mpg) correlates with car prices.
+
+@author: Robert Elliott
 """
 
 import streamlit as st

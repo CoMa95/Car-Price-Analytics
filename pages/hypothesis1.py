@@ -1,4 +1,5 @@
 """
+
 Hypothesis 1 Page: Fuel Type Impact on Car Price
 
 This page tests the hypothesis that fuel type (petrol vs diesel) has a
@@ -6,6 +7,8 @@ significant effect on car prices.
 
 It includes visualizations and statistical tests (pearson, spearman, t-test
 and Mann–Whitney U test) to analyze the impact of fuel type on car prices.
+
+@author: Robert Elliott
 """
 
 import streamlit as st

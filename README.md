@@ -6,7 +6,7 @@ Car Price Analysis Dashboard is an interactive data exploration and hypothesis t
 
 ## 📊 Dataset Content
 
-The dataset used in this project is sourced from the  [Car Price Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction).
+The dataset used in this project is sourced from the [Car Price Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction).
 
 It contains detailed information about various car models, including:
 
@@ -37,15 +37,15 @@ Specific business requirements include:
 The following hypotheses were tested using statistical and visual analysis:
 
 1. Fuel type impacts car price.\
-*Validation:* Independent samples T-test and boxplots comparing average prices between fuel types (petrol vs diesel).
+   _Validation:_ Independent samples T-test and boxplots comparing average prices between fuel types (petrol vs diesel).
 2. Fuel efficiency is inversely correlated with price.\
-*Validation:* Correlation analysis, scatter plots, and Mann–Whitney U test on high vs low efficiency groups.
+   _Validation:_ Correlation analysis, scatter plots, and Mann–Whitney U test on high vs low efficiency groups.
 3. Car body style influences car price.\
-*Validation:* ANOVA and boxplots comparing mean prices across body types (sedan, hatchback, convertible, etc.).
+   _Validation:_ ANOVA and boxplots comparing mean prices across body types (sedan, hatchback, convertible, etc.).
 4. Front wheel drive cars are cheaper than rear wheel drive cars.\
-*Validation:* T-test and group comparisons using bar and box plots.
+   _Validation:_ T-test and group comparisons using bar and box plots.
 5. Top predictors of price can be identified through regression modelling.\
-*Validation:* Multiple linear regression model trained on key numerical predictors to assess variable importance.
+   _Validation:_ Multiple linear regression model trained on key numerical predictors to assess variable importance.
 
 ## 🧩 Project Plan
 
@@ -70,14 +70,14 @@ The following hypotheses were tested using statistical and visual analysis:
 
 ## 🧭 Mapping Business Requirements to Visualisations
 
-| Business Requirement        | Visualisation Type | Rationale |
-|-----------------------------|--------------------|-----------|
-| Fuel type impacts car price | Boxplot & T-test   | Compare price distributions by fuel type |
-| Fuel efficiency vs price | Scatter plot & correlation |Show inverse trend between price and efficiency |
-| Car body style influences price | Boxplot & ANOVA | Compare price averages across body styles |
-| Drive type comparison | Grouped bar chart & T-test | Show whether FWD cars are cheaper than RWD |
-| Identify top predictors | Feature importance plot | Show which variables most strongly predict price |
-| Interactive dashboard | Streamlit filters & plots | Allow user-driven data exploration |
+| Business Requirement            | Visualisation Type         | Rationale                                        |
+| ------------------------------- | -------------------------- | ------------------------------------------------ |
+| Fuel type impacts car price     | Boxplot & T-test           | Compare price distributions by fuel type         |
+| Fuel efficiency vs price        | Scatter plot & correlation | Show inverse trend between price and efficiency  |
+| Car body style influences price | Boxplot & ANOVA            | Compare price averages across body styles        |
+| Drive type comparison           | Grouped bar chart & T-test | Show whether FWD cars are cheaper than RWD       |
+| Identify top predictors         | Feature importance plot    | Show which variables most strongly predict price |
+| Interactive dashboard           | Streamlit filters & plots  | Allow user-driven data exploration               |
 
 ## 🔍 Analysis Techniques Used
 
@@ -110,34 +110,52 @@ The following hypotheses were tested using statistical and visual analysis:
 ### Dashboard Pages
 
 1. **Overview**
-    - Dataset summary and KPIs (e.g., average price, average MPG).
-    - Correlation heatmap of numeric features.
+   - Dataset summary and KPIs (e.g., average price, average MPG).
+   - Correlation heatmap of numeric features.
 2. **Hypothesis 1: Fuel Type Comparison**
-    - Box Plot showing the distribution of prices by fuel type.
-    - Violin Plot illustrating the spread of price by fuel type.
-    - KDE Plot showing the density distribution of car prices by fuel
-        type, highlighting where price values are most concentrated
-        and how they differ between fuel types.
-    - T-Test and Mann–Whitney U Test conducted to assess whether price differences between fuel types are statistically significant.
-    - Pearson and Spearman correlation tests performed to examine the strength and direction of relationships between fuel type and price.
-    - Summary statistics (mean and median prices) used to contextualise the findings.
+   - Box Plot showing the distribution of prices by fuel type.
+   - Violin Plot illustrating the spread of price by fuel type.
+   - KDE Plot showing the density distribution of car prices by fuel
+     type, highlighting where price values are most concentrated
+     and how they differ between fuel types.
+   - T-Test and Mann–Whitney U Test conducted to assess whether price differences between fuel types are statistically significant.
+   - Pearson and Spearman correlation tests performed to examine the strength and direction of relationships between fuel type and price.
+   - Summary statistics (mean and median prices) used to contextualise the findings.
 3. Hypothesis 2: Fuel Efficiency and Price Relationship
-    - Scatter Plot with regression line showing the relationship between fuel efficiency (average MPG) and car price, illustrating the strength and direction of correlation.
-    - Heatmap visualising correlations between key numerical features, highlighting how fuel efficiency relates to price and other performance variables.
-    - Bubble Plot displaying the combined effect of fuel efficiency, engine size, and price, providing a multivariate view of how these factors interact.
-    - Pearson and Spearman correlation tests conducted to evaluate both linear and monotonic relationships between fuel efficiency and price.
-    - T-Test and Mann–Whitney U Test performed to determine whether price differences between cars with varying fuel efficiency levels are statistically significant.
-    - Descriptive statistics (mean MPG and average price) used to support and contextualise findings.
-4. Hypothesis 3: Car body style influences car price
-    - Hidaia please write your description here.
-5. Hypothesis 4: Front wheel drive cars are cheaper thatn rear wheel drive
-    - Hidaia please write you description of page here.
+   - Scatter Plot with regression line showing the relationship between fuel efficiency (average MPG) and car price, illustrating the strength and direction of correlation.
+   - Heatmap visualising correlations between key numerical features, highlighting how fuel efficiency relates to price and other performance variables.
+   - Bubble Plot displaying the combined effect of fuel efficiency, engine size, and price, providing a multivariate view of how these factors interact.
+   - Pearson and Spearman correlation tests conducted to evaluate both linear and monotonic relationships between fuel efficiency and price.
+   - T-Test and Mann–Whitney U Test performed to determine whether price differences between cars with varying fuel efficiency levels are statistically significant.
+   - Descriptive statistics (mean MPG and average price) used to support and contextualise findings.
+4. _Hypothesis 3: Car Body Type vs Price_
+
+- This page examines how different car body types (such as sedan, hatchback, coupe, convertible, and SUV) influence car prices.
+- The data is grouped by car body type, and summary statistics (mean, median, minimum, maximum) are calculated for each group.
+- _Bar Plot_ visualizes the average price per car body type, providing a clear comparison across categories.
+- _Box Plot_ illustrates the price distribution for each body type, showing variations and potential outliers.
+- The analysis suggests that SUVs and coupes tend to have higher average prices, while hatchbacks and sedans are generally more affordable.
+- Page created by _Hidaia_.
+
+5. _Hypothesis 4: Front Wheel Drive Cars are Cheaper than Rear Wheel Drive_
+
+- This page analyzes whether front-wheel drive (FWD) cars are generally cheaper than rear-wheel drive (RWD) cars.
+- The data is filtered and grouped based on the drivewheel variable, and summary statistics (mean, median, minimum, maximum) are calculated for each drive type.
+- _Bar Plot_ shows the average car price for each drive type (FWD, RWD, 4WD), providing a clear visual comparison between them.
+- _Box Plot_ illustrates the price distribution across drive wheel types, showing variability and potential outliers.
+- _T-Test_ is performed to statistically compare prices between FWD and RWD cars.
+  - Displays the calculated t-statistic and p-value results.
+  - Determines whether the price difference between the two drive types is statistically significant (p < 0.05).
+- Descriptive statistics are presented to support and contextualize the findings.
+- Findings indicate whether FWD cars tend to have lower average prices than RWD cars.
+- Page created by _Hidaia_.
+
 6. Hypothesis 5: What are features which highly predict price?
-    - Cosmin please write your description here.
+   - Cosmin please write your description here.
 7. Price Predictor Page
-    - Cosmin please put your description here.
+   - Cosmin please put your description here.
 8. Insights Page
-    - Key takeaways and conclusions from all analyses.
+   - Key takeaways and conclusions from all analyses.
 
 ### Communication
 
@@ -158,24 +176,24 @@ This issue does not affect other dashboard functionality or visuals.
 ### Challenges
 
 - **Repository Desynchronisation:** \
-    One team member’s local repository fell significantly behind the others, causing version conflicts and missing updates. This required coordinated effort to resynchronise branches, rebase changes, and ensure all code and data files were correctly aligned before deployment. The team used GitHub’s pull request history and commit comparison tools to identify discrepancies and restore consistency. Although it delayed some progress, it improved everyone’s understanding of version control best practices.
+   One team member’s local repository fell significantly behind the others, causing version conflicts and missing updates. This required coordinated effort to resynchronise branches, rebase changes, and ensure all code and data files were correctly aligned before deployment. The team used GitHub’s pull request history and commit comparison tools to identify discrepancies and restore consistency. Although it delayed some progress, it improved everyone’s understanding of version control best practices.
 - **Filter-Related NaN Errors:**\
-    Filters excluding all records from one group on hypothesis pages caused NaN or empty sample errors during statistical tests. This will be resolved in future updates by validating group data before running tests.
+   Filters excluding all records from one group on hypothesis pages caused NaN or empty sample errors during statistical tests. This will be resolved in future updates by validating group data before running tests.
 - **Streamlit Session State Management:**\
-    Maintaining consistent filters across multiple pages introduced complexity. The team used `st.session_state` to store global filters, though further optimisation is planned.
+   Maintaining consistent filters across multiple pages introduced complexity. The team used `st.session_state` to store global filters, though further optimisation is planned.
 - **Responsive Layout and Performance:**\
-    Some larger visualisations caused temporary lag or layout stretching on smaller screens. Future iterations will include layout tuning and caching improvements.
+   Some larger visualisations caused temporary lag or layout stretching on smaller screens. Future iterations will include layout tuning and caching improvements.
 
 ### Next Steps and Skills to Learn
 
 - **Version Control Mastery:**\
-    Continue improving Git and GitHub collaboration practices — particularly resolving merge conflicts, using branching workflows, and managing pull requests effectively.
+   Continue improving Git and GitHub collaboration practices — particularly resolving merge conflicts, using branching workflows, and managing pull requests effectively.
 - **Advanced Streamlit Techniques:**\
-    Learn more about session state optimisation, dynamic page navigation, and responsive dashboard design.
+   Learn more about session state optimisation, dynamic page navigation, and responsive dashboard design.
 - **Machine Learning Modelling:**\
-    Build on the regression model by experimenting with tree-based or ensemble models (e.g., Random Forest, XGBoost) to improve prediction accuracy.
+   Build on the regression model by experimenting with tree-based or ensemble models (e.g., Random Forest, XGBoost) to improve prediction accuracy.
 - **Performance Optimisation:**\
-    Explore caching strategies, modularisation, and profiling to make Streamlit apps faster and more scalable.
+   Explore caching strategies, modularisation, and profiling to make Streamlit apps faster and more scalable.
 
 ## Deployment
 
@@ -198,16 +216,16 @@ Live Link: [https://car-price-analysis.streamlit.app](https://car-price-analysis
 
 ## 🧰 Main Data Analysis Libraries
 
-| Library        | Purpose              | Example Usage                                      |
-|----------------|----------------------|----------------------------------------------------|
-| pandas         | Data manipulation    | ```df.groupby('fueltype')['price'].mean()```       |
-| numpy          | Numeric operations   | ```np.log(df['price'])```                          |
-| matplotlib     | Static plots         | ```plt.hist(df['price'], bins=20)```               |
-| seaborn        | Statistical plots    | ```sns.boxplot(x='fueltype', y='price', data=df)```|
-| plotly.express | Interactive visuals  | ```px.scatter(df, x='horsepower', y='price')```    |
-| scipy.stats    | Hypothesis testing   | ```ttest_ind(group1, group2)```                    |
-| scikit-learn   | Regression modelling | ```LinearRegression().fit(X_train, y_train)```     |
-| streamlit      | Dashboard interface  | ```st.plotly_chart(fig)```                         |
+| Library        | Purpose              | Example Usage                                   |
+| -------------- | -------------------- | ----------------------------------------------- |
+| pandas         | Data manipulation    | `df.groupby('fueltype')['price'].mean()`        |
+| numpy          | Numeric operations   | `np.log(df['price'])`                           |
+| matplotlib     | Static plots         | `plt.hist(df['price'], bins=20)`                |
+| seaborn        | Statistical plots    | `sns.boxplot(x='fueltype', y='price', data=df)` |
+| plotly.express | Interactive visuals  | `px.scatter(df, x='horsepower', y='price')`     |
+| scipy.stats    | Hypothesis testing   | `ttest_ind(group1, group2)`                     |
+| scikit-learn   | Regression modelling | `LinearRegression().fit(X_train, y_train)`      |
+| streamlit      | Dashboard interface  | `st.plotly_chart(fig)`                          |
 
 ## 🙏 Credits
 

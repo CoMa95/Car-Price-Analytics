@@ -196,9 +196,18 @@ Live Link: https://car-price-analysis.streamlit.app
 6. Deploy the app — Streamlit builds and hosts automatically.
 
 
-## Main Data Analysis Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+## 🧰 Main Data Analysis Libraries
 
+| Library        | Purpose              | Example Usage                                      |
+|----------------|----------------------|----------------------------------------------------|
+| pandas         | Data manipulation    | ```df.groupby('fueltype')['price'].mean()```       |
+| numpy	         | Numeric operations   | ```np.log(df['price'])```                          |
+| matplotlib     | Static plots         | ```plt.hist(df['price'], bins=20)```               |
+| seaborn        | Statistical plots    | ```sns.boxplot(x='fueltype', y='price', data=df)```|
+| plotly.express | Interactive visuals  | ```px.scatter(df, x='horsepower', y='price')```    |
+| scipy.stats    | Hypothesis testing   | ```ttest_ind(group1, group2)```                    |
+| scikit-learn   | Regression modelling | ```LinearRegression().fit(X_train, y_train)```     |
+| streamlit      | Dashboard interface  | ```st.plotly_chart(fig)```                         |
 
 ## Credits 
 

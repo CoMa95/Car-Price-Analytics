@@ -99,19 +99,49 @@ The following hypotheses were tested using statistical and visual analysis:
 
 ## ⚖️ Ethical Considerations
 
-Data privacy: Dataset is anonymised and publicly available.
+- Data privacy: Dataset is anonymised and publicly available.
+- Bias: Some manufacturers are overrepresented, possibly biasing results.
+- Fairness: Non-parametric tests were used to handle unequal variances.
+- Transparency: All cleaning and transformation steps are documented in the notebooks.
 
-Bias: Some manufacturers are overrepresented, possibly biasing results.
+## 🖥️ Dashboard Design
 
-Fairness: Non-parametric tests were used to handle unequal variances.
+### Dashboard Pages
 
-Transparency: All cleaning and transformation steps are documented in the notebooks.
+1. **Overview**
+    - Dataset summary and KPIs (e.g., average price, average MPG).
+    - Correlation heatmap of numeric features.
+2. **Hypothesis 1: Fuel Type Comparison**
+    - Box Plot showing the distribution of prices by fuel type.
+    - Violin Plot illustrating the spread of price by fuel type.
+    - KDE Plot showing the density distribution of car prices by fuel
+        type, highlighting where price values are most concentrated
+        and how they differ between fuel types.
+    - T-Test and Mann–Whitney U Test conducted to assess whether price differences between fuel types are statistically significant.
+    - Pearson and Spearman correlation tests performed to examine the strength and direction of relationships between fuel type and price. 
+    - Summary statistics (mean and median prices) used to contextualise the findings.
+3. Hypothesis 2: Fuel Efficiency and Price Relationship
+    - Scatter Plot with regression line showing the relationship between fuel efficiency (average MPG) and car price, illustrating the strength and direction of correlation.
+    - Heatmap visualising correlations between key numerical features, highlighting how fuel efficiency relates to price and other performance variables.
+    - Bubble Plot displaying the combined effect of fuel efficiency, engine size, and price, providing a multivariate view of how these factors interact.
+    - Pearson and Spearman correlation tests conducted to evaluate both linear and monotonic relationships between fuel efficiency and price.
+    - T-Test and Mann–Whitney U Test performed to determine whether price differences between cars with varying fuel efficiency levels are statistically significant.
+    - Descriptive statistics (mean MPG and average price) used to support and contextualise findings.
+4. Hypothesis 3: Car body style influences car price
+    - Hidaia please write your description here.
+5. Hypothesis 4: Front wheel drive cars are cheaper thatn rear wheel drive
+    - Hidaia please write you description of page here. 
+6. Hypothesis 5: What are features which highly predict price?
+    - Cosmin please write your description here.
+7. Price Predictor Page
+    - Cosmin please put your description here.
+8. Insights Page
+    - Key takeaways and conclusions from all analyses.
 
-## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-* How were data insights communicated to technical and non-technical audiences?
-* Explain how the dashboard was designed to communicate complex data insights to different audiences. 
+### Communication:
+
+- Interactive visuals (Plotly) allow exploration by non-technical users.
+- Technical insights are summarised with statistical output text and markdown explanations.
 
 ## Unfixed Bugs
 * Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.

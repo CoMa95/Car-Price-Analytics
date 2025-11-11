@@ -30,11 +30,11 @@ H_1 &: \text{At least one feature presents with a statistically significant corr
 
 # ---------------- Load filtered data ----------------
 
-if "filtered_df" not in st.session_state:
+if "df" not in st.session_state:
     st.warning("No data found. Please visit the Home page to load and filter the dataset.")
     st.stop()
 
-df = st.session_state["filtered_df"]
+df = st.session_state["df"]
 
 # ---------------- Data preparation ----------------
 
@@ -189,7 +189,7 @@ st.markdown(
     The correlation heatmap below shows the final selection of continuous variables against price.
     """
 )
-st.image(Path.cwd() / 'figures/corr_mat_final_selection.png', width='stretch', caption=None)
+st.image('figures/corr_mat_final_selection.png', use_container_width=True, caption=None)
 
 # Add figure with context
 st.markdown(
@@ -237,7 +237,7 @@ st.markdown(
     Wider sections represent higher density of observations; median lines indicate price centers per group.
     """
 )
-st.image(Path.cwd() / 'figures/categorical_violin_final_selection.png', width='stretch', caption=None)
+st.image('figures/categorical_violin_final_selection.png', use_container_width=True, caption=None)
 
 st.divider()
 
